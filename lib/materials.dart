@@ -11,37 +11,37 @@ class _Material_of_bmiState extends State<Material_of_bmi> {
   final TextEditingController textEditingController2 = TextEditingController();
   final TextEditingController textEditingController1 = TextEditingController();
   double reslut = 0;
+  void _resetState() {
+    setState(() {
+      textEditingController1.clear();
+      textEditingController2.clear();// Clear text field
+      reslut = 0; // Reset displayed value or calculation
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFFD3C5E5),
       appBar: AppBar(
-        shape: Border(
-          bottom: BorderSide(
-            color: const Color.fromARGB(255, 0, 0, 0),
-            width: 1,
-          ),
-        ),
-        elevation: 4,
-        backgroundColor: const Color.fromARGB(255, 241, 239, 239),
-        title: Container(
-          padding: EdgeInsets.all(6),
-          decoration: BoxDecoration(
-            border: Border.all(width: 1.5, color: Colors.black),
-          ),
-          child: Text("BMI calculator",
+
+        elevation: 10,
+        shadowColor: Color(0xFF735DA5),
+        backgroundColor: Color(0xFF735DA5),
+        title: Text("BMI CALCULATOR",
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
-            ),),
+            ),
         ),
+
         centerTitle: true,
         actions: [
           IconButton(
             onPressed: () {
-              (context as Element).markNeedsBuild();
+              _resetState();
             },
-            icon: Icon(Icons.refresh),
+            icon: Icon(Icons.refresh, color: Colors.black,),
           ),
         ],
       ),
@@ -49,6 +49,7 @@ class _Material_of_bmiState extends State<Material_of_bmi> {
       body: SingleChildScrollView(
         child: Column(
           //mainAxisAlignment: MainAxisAlignment.center,
+
           children: [
 
             SizedBox(height: 90),
@@ -56,12 +57,11 @@ class _Material_of_bmiState extends State<Material_of_bmi> {
 
               padding: const EdgeInsets.all(20.0),
               child: Card(
-                color: const Color.fromARGB(255, 234, 231, 231),
-                elevation: 10,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
-                  side: BorderSide(width: 2, color: Colors.black),
-                ),
+
+                color: Color(0xFF735DA5),
+                elevation: 20,
+                shadowColor: Color(0xFF735DA5),
+
 
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),
@@ -87,7 +87,7 @@ class _Material_of_bmiState extends State<Material_of_bmi> {
                           hintStyle: TextStyle(color: Colors.black),
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
-                            borderSide: BorderSide(width: 1.5),
+                            borderSide: BorderSide(width: 1),
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
@@ -97,7 +97,7 @@ class _Material_of_bmiState extends State<Material_of_bmi> {
                             ),
                           ),
                           filled: true,
-                          fillColor: const Color.fromARGB(240, 255, 255, 255),
+                          fillColor: Color(0xFFD3C5E5),
                         ),
                         keyboardType: TextInputType.numberWithOptions(
                           decimal: true,
@@ -122,7 +122,7 @@ class _Material_of_bmiState extends State<Material_of_bmi> {
                           hintStyle: TextStyle(color: Colors.black),
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
-                            borderSide: BorderSide(width: 1.5),
+                            borderSide: BorderSide(width: 1),
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
@@ -132,14 +132,14 @@ class _Material_of_bmiState extends State<Material_of_bmi> {
                             ),
                           ),
                           filled: true,
-                          fillColor: const Color.fromARGB(240, 255, 255, 255),
+                          fillColor: Color(0xFFD3C5E5),
                         ),
                         keyboardType: TextInputType.numberWithOptions(
                           decimal: true,
                         ),
                       ),
                       //
-                      Text("Your BMI is: "),
+                      Text("Your BMI is:"),
                       Text(reslut.toStringAsFixed(2)),
                       //
                     ],
@@ -148,28 +148,36 @@ class _Material_of_bmiState extends State<Material_of_bmi> {
               ),
             ),
             SizedBox(height: 10),
-            ElevatedButton(
-              style: ButtonStyle(
-                backgroundColor: WidgetStatePropertyAll(
-                  const Color.fromARGB(255, 189, 182, 182),
-                ),
-                shape: WidgetStatePropertyAll(
-                  RoundedRectangleBorder(
-                    side: BorderSide(width: 2, color: Colors.black),
+            SizedBox(
+              width: 150,
+              height: 50,
+              child: ElevatedButton(
+                style: ButtonStyle(
+                  shadowColor: WidgetStatePropertyAll(Color(0xFF735DA5)),
+                  elevation: WidgetStatePropertyAll(16),
+                  backgroundColor: WidgetStatePropertyAll(
+                    Color(0xFF735DA5),
+                  ),
+                  shape: WidgetStatePropertyAll(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      side: BorderSide(width: 0, color: Colors.black),
+                    ),
                   ),
                 ),
+                onPressed: () {
+                  setState(
+                          () {
+                        reslut = double.parse(textEditingController1.text) /
+                            (double.parse(textEditingController2.text) *
+                                double.parse(textEditingController2.text));
+                      }
+                  );
+                },
+                child: Text("Calculate", style: TextStyle(color: Colors.black)),
               ),
-              onPressed: () {
-                setState(
-                    () {
-                      reslut = double.parse(textEditingController1.text) /
-                          (double.parse(textEditingController2.text) *
-                              double.parse(textEditingController2.text));
-                    }
-                );
-              },
-              child: Text("Calculate", style: TextStyle(color: Colors.black)),
             ),
+
           ],
         ),
       ),
