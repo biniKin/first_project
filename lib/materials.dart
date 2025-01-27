@@ -19,13 +19,18 @@ class _Material_of_bmiState extends State<Material_of_bmi> {
     });
   }
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFD3C5E5),
+      backgroundColor: Color(0xFFBD98DC),
       appBar: AppBar(
-
-        elevation: 10,
+        shape: Border(
+          bottom: BorderSide(
+            width: 1
+          )
+        ),
+        elevation: 2,
         shadowColor: Color(0xFF735DA5),
         backgroundColor: Color(0xFF735DA5),
         title: Text("BMI CALCULATOR",
@@ -61,7 +66,11 @@ class _Material_of_bmiState extends State<Material_of_bmi> {
                 color: Color(0xFF735DA5),
                 elevation: 20,
                 shadowColor: Color(0xFF735DA5),
-
+                shape: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    width: 1
+                  )
+                ),
 
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),
@@ -97,7 +106,7 @@ class _Material_of_bmiState extends State<Material_of_bmi> {
                             ),
                           ),
                           filled: true,
-                          fillColor: Color(0xFFD3C5E5),
+                          fillColor: Color(0xFFC5ACE6),
                         ),
                         keyboardType: TextInputType.numberWithOptions(
                           decimal: true,
@@ -132,7 +141,7 @@ class _Material_of_bmiState extends State<Material_of_bmi> {
                             ),
                           ),
                           filled: true,
-                          fillColor: Color(0xFFD3C5E5),
+                          fillColor: Color(0xFFC5ACE6),
                         ),
                         keyboardType: TextInputType.numberWithOptions(
                           decimal: true,
@@ -161,7 +170,7 @@ class _Material_of_bmiState extends State<Material_of_bmi> {
                   shape: WidgetStatePropertyAll(
                     RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
-                      side: BorderSide(width: 0, color: Colors.black),
+                      side: BorderSide(width: 1, color: Colors.black),
                     ),
                   ),
                 ),
