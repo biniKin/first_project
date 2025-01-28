@@ -23,15 +23,11 @@ class _Material_of_bmiState extends State<Material_of_bmi> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFBD98DC),
+      backgroundColor: Color(0xFFB6A7EF),
       appBar: AppBar(
-        shape: Border(
-          bottom: BorderSide(
-            width: 1
-          )
-        ),
+
         elevation: 2,
-        shadowColor: Color(0xFF735DA5),
+        shadowColor: Color(0xFF714293),
         backgroundColor: Color(0xFF735DA5),
         title: Text("BMI CALCULATOR",
             style: TextStyle(
@@ -52,32 +48,36 @@ class _Material_of_bmiState extends State<Material_of_bmi> {
       ),
       drawer: Drawer(
         child: Container(
-          color: Color(0xFF735DA5),
+          color: Color(0xFFB6A7EF),
           child: ListView(
+
             children: [
-              Container(
-
-                child: DrawerHeader(
-                    child: Center(
-                        child: Text("BMI Calculator", style: TextStyle(fontSize: 25),)
-                    )
-                ),
+              SizedBox(height: 20,),
+              DrawerHeader(
+                  child: Center(
+                      child: Text(
+                        "BMI Calculator",
+                        style: TextStyle(
+                            fontSize: 25),
+                      )
+                  )
               ),
-
-              
+              SizedBox(height: 10,),
               ListTile(
                 leading: Icon(Icons.home, color: Colors.black, size: 25,),
                 title: Text("Home", style: TextStyle(fontSize: 17),),
               ),
+
               SizedBox(height: 10,),
               ListTile(
-                leading: Icon(Icons.account_circle, color: Colors.black, size: 25,),
-                title: Text("Profile", style: TextStyle(fontSize: 17),),
-              ),
-              SizedBox(height: 10,),
-              ListTile(
-                leading: Icon(Icons.light_mode, color: Colors.black, size: 25,),
+                leading: Icon(Icons.dark_mode_rounded, color: Colors.black, size: 25,),
                 title: Text("Theme", style: TextStyle(fontSize: 17),),
+              ),
+
+              SizedBox(height: 10,),
+              ListTile(
+                leading: Icon(Icons.info, color: Colors.black, size: 25,),
+                title: Text("About", style: TextStyle(fontSize: 17),),
               ),
 
             ],
@@ -90,26 +90,32 @@ class _Material_of_bmiState extends State<Material_of_bmi> {
           //mainAxisAlignment: MainAxisAlignment.center,
 
           children: [
-
-            SizedBox(height: 90),
+            SizedBox(height: 50),
             Padding(
-
               padding: const EdgeInsets.all(20.0),
               child: Card(
 
                 color: Color(0xFF735DA5),
                 elevation: 20,
                 shadowColor: Color(0xFF735DA5),
-                shape: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    width: 1
-                  )
-                ),
+
 
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),
                   child: Column(
                     children: [
+                      SizedBox(height: 10),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text("Male: "),
+                            Icon(Icons.male_sharp, size: 30,),
+                            Icon(Icons.more_vert_sharp, size: 30,color: Color(0xFFB6A7EF),),
+                            Text("Female: "),
+                            Icon(Icons.female_outlined, size: 30,),
+                          ],
+                      ),
+
 
                       SizedBox(height: 15,),
                       Align(
@@ -140,7 +146,7 @@ class _Material_of_bmiState extends State<Material_of_bmi> {
                             ),
                           ),
                           filled: true,
-                          fillColor: Color(0xFFC5ACE6),
+                          fillColor: Color(0xFFB6A7EF),
                         ),
                         keyboardType: TextInputType.numberWithOptions(
                           decimal: true,
@@ -175,14 +181,14 @@ class _Material_of_bmiState extends State<Material_of_bmi> {
                             ),
                           ),
                           filled: true,
-                          fillColor: Color(0xFFC5ACE6),
+                          fillColor: Color(0xFFB6A7EF),
                         ),
                         keyboardType: TextInputType.numberWithOptions(
                           decimal: true,
                         ),
                       ),
                       //
-                      Text("Your BMI is:"),
+                      Text("Your BMI is:", style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),),
                       Text(reslut.toStringAsFixed(2)),
                       //
                     ],
@@ -190,7 +196,7 @@ class _Material_of_bmiState extends State<Material_of_bmi> {
                 ),
               ),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 5),
             SizedBox(
               width: 150,
               height: 50,
