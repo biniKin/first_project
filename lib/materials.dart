@@ -50,6 +50,40 @@ class _Material_of_bmiState extends State<Material_of_bmi> {
           ),
         ],
       ),
+      drawer: Drawer(
+        child: Container(
+          color: Color(0xFF735DA5),
+          child: ListView(
+            children: [
+              Container(
+
+                child: DrawerHeader(
+                    child: Center(
+                        child: Text("BMI Calculator", style: TextStyle(fontSize: 25),)
+                    )
+                ),
+              ),
+
+              
+              ListTile(
+                leading: Icon(Icons.home, color: Colors.black, size: 25,),
+                title: Text("Home", style: TextStyle(fontSize: 17),),
+              ),
+              SizedBox(height: 10,),
+              ListTile(
+                leading: Icon(Icons.account_circle, color: Colors.black, size: 25,),
+                title: Text("Profile", style: TextStyle(fontSize: 17),),
+              ),
+              SizedBox(height: 10,),
+              ListTile(
+                leading: Icon(Icons.light_mode, color: Colors.black, size: 25,),
+                title: Text("Theme", style: TextStyle(fontSize: 17),),
+              ),
+
+            ],
+          ),
+        ),
+      ),
 
       body: SingleChildScrollView(
         child: Column(
