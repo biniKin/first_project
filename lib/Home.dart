@@ -1,14 +1,14 @@
 import 'package:first_project/drawer.dart';
 import 'package:flutter/material.dart';
 
-class Material_of_bmi extends StatefulWidget {
-  const Material_of_bmi({super.key});
+class Home extends StatefulWidget {
+  const Home({super.key});
 
   @override
-  State<Material_of_bmi> createState() => _Material_of_bmiState();
+  State<Home> createState() => _Home();
 }
 
-class _Material_of_bmiState extends State<Material_of_bmi> {
+class _Home extends State<Home> {
   final TextEditingController textEditingController2 = TextEditingController();
   final TextEditingController textEditingController1 = TextEditingController();
   double reslut = 0;
@@ -31,10 +31,10 @@ class _Material_of_bmiState extends State<Material_of_bmi> {
         shadowColor: Color(0xFF714293),
         backgroundColor: Color(0xFF735DA5),
         title: Text("BMI CALCULATOR",
-            style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-            ),
+          style: TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+          ),
         ),
 
         centerTitle: true,
@@ -71,13 +71,13 @@ class _Material_of_bmiState extends State<Material_of_bmi> {
                       SizedBox(height: 10),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text("Male: "),
-                            Icon(Icons.male_sharp, size: 30,),
-                            Icon(Icons.more_vert_sharp, size: 30,color: Color(0xFFB6A7EF),),
-                            Text("Female: "),
-                            Icon(Icons.female_outlined, size: 30,),
-                          ],
+                        children: [
+                          Text("Male: "),
+                          Icon(Icons.male_sharp, size: 30,),
+                          Icon(Icons.more_vert_sharp, size: 30,color: Color(0xFFB6A7EF),),
+                          Text("Female: "),
+                          Icon(Icons.female_outlined, size: 30,),
+                        ],
                       ),
 
 
@@ -86,8 +86,8 @@ class _Material_of_bmiState extends State<Material_of_bmi> {
                         alignment: Alignment.centerLeft,
                         child: Text("Mass(KG)",
                           style: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
                           ),),
                       ),
 
@@ -125,7 +125,7 @@ class _Material_of_bmiState extends State<Material_of_bmi> {
                           style: TextStyle(
                             fontSize: 15,
                             fontWeight: FontWeight.bold,
-                        ),),
+                          ),),
                       ),
                       SizedBox(height: 7,),
                       TextField(
