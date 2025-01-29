@@ -9,11 +9,7 @@ class ThemeMat extends StatefulWidget {
 }
 
 class _ThemeMatState extends State<ThemeMat> {
-  void _resetState() {
-    setState(() {
-      // Reset displayed value or calculation
-    });
-  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -31,19 +27,9 @@ class _ThemeMatState extends State<ThemeMat> {
             ),
           ),
           centerTitle: true,
-          actions: [
-            IconButton(
-              onPressed: () {
-                _resetState();
-              },
-              icon: Icon(
-                Icons.refresh,
-                color: Colors.black,
-              ),
-            ),
-          ],
+
         ),
-        drawer: DrawerMat(),
+
         body: Row(
           children: [
 

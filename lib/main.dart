@@ -1,4 +1,9 @@
+import 'package:first_project/Home.dart';
+import 'package:first_project/about.dart';
 import 'package:first_project/materials.dart';
+import 'package:first_project/result.dart';
+import 'package:first_project/drawer.dart';
+import 'package:first_project/theme.dart';
 import 'package:flutter/material.dart';
 
 
@@ -16,6 +21,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData.light(),
       home: Material_of_bmi(),
+      routes:{
+        '/ResPage':(context) => const Reslut_page(),
+        '/abt':(context) => const About(),
+        '/the':(context) => const ThemeMat(),
+      } ,
     );
   }
 }

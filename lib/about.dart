@@ -32,19 +32,9 @@ class _AboutState extends State<About> {
           ),
         ),
         centerTitle: true,
-        actions: [
-          IconButton(
-            onPressed: () {
-              _resetState();
-            },
-            icon: Icon(
-              Icons.refresh,
-              color: Colors.black,
-            ),
-          ),
-        ],
+
       ),
-      drawer: DrawerMat(),
+
       body: Column(
 
         children: [

@@ -1,4 +1,5 @@
 import 'package:first_project/drawer.dart';
+import 'package:first_project/result.dart';
 import 'package:flutter/material.dart';
 
 class Material_of_bmi extends StatefulWidget {
@@ -12,13 +13,6 @@ class _Material_of_bmiState extends State<Material_of_bmi> {
   final TextEditingController textEditingController2 = TextEditingController();
   final TextEditingController textEditingController1 = TextEditingController();
   double reslut = 0;
-  void _resetState() {
-    setState(() {
-      textEditingController1.clear();
-      textEditingController2.clear();// Clear text field
-      reslut = 0; // Reset displayed value or calculation
-    });
-  }
 
 
   @override
@@ -38,14 +32,7 @@ class _Material_of_bmiState extends State<Material_of_bmi> {
         ),
 
         centerTitle: true,
-        actions: [
-          IconButton(
-            onPressed: () {
-              _resetState();
-            },
-            icon: Icon(Icons.refresh, color: Colors.black,),
-          ),
-        ],
+
       ),
       drawer: DrawerMat(),
 
@@ -71,13 +58,57 @@ class _Material_of_bmiState extends State<Material_of_bmi> {
                       SizedBox(height: 10),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text("Male: "),
-                            Icon(Icons.male_sharp, size: 30,),
-                            Icon(Icons.more_vert_sharp, size: 30,color: Color(0xFFB6A7EF),),
-                            Text("Female: "),
-                            Icon(Icons.female_outlined, size: 30,),
-                          ],
+                        children: [
+                          GestureDetector(
+                            onTap: (){
+                            },
+                            child: Column(
+                              children: [
+
+                                Container(
+                                  height: 50,
+                                  width: 50,
+                                  child: Card(
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(10),
+                                          side: BorderSide(
+                                              width: 1,
+                                              color: Color(0xFF8E1CE1)
+                                          )
+                                      ),
+                                      color: Color(0xFFBD98DC),
+                                      child: Icon(Icons.male_sharp, size: 33, color: Colors.black,)
+                                  ),
+                                ),
+                                Text("Male", style: TextStyle(fontWeight: FontWeight.bold),)
+                              ],
+                            ),
+                          ),
+                          SizedBox(width: 16,),
+                          GestureDetector(
+                            child: Column(
+                              children: [
+                                Container(
+                                  height: 50,
+                                  width: 50,
+
+                                  child: Card(
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(10),
+                                          side: BorderSide(
+                                              width: 1,
+                                              color: Color(0xFF714293)
+                                          )
+                                      ),
+                                      color: Color(0xFF7A5DBD),
+                                      child: Icon(Icons.female_outlined, size: 33, color: Colors.black,)
+                                  ),
+                                ),
+                                Text("Female", style: TextStyle(fontWeight: FontWeight.bold),)
+                              ],
+                            ),
+                          ),
+                        ],
                       ),
 
 
@@ -152,8 +183,7 @@ class _Material_of_bmiState extends State<Material_of_bmi> {
                         ),
                       ),
                       //
-                      Text("Your BMI is:", style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),),
-                      Text(reslut.toStringAsFixed(2)),
+                      SizedBox(height: 40,)
                       //
                     ],
                   ),
@@ -179,13 +209,10 @@ class _Material_of_bmiState extends State<Material_of_bmi> {
                   ),
                 ),
                 onPressed: () {
-                  setState(
-                          () {
-                        reslut = double.parse(textEditingController1.text) /
-                            (double.parse(textEditingController2.text) *
-                                double.parse(textEditingController2.text));
-                      }
-                  );
+                  setState(() {
+                    Navigator.pushNamed(context,'/ResPage');
+
+                  });
                 },
                 child: Text("Calculate", style: TextStyle(color: Colors.black)),
               ),

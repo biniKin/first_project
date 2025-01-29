@@ -38,7 +38,7 @@ class DrawerMat extends StatelessWidget{
               leading: Icon(Icons.dark_mode_rounded, color: Colors.black, size: 25,),
               title: Text("Theme", style: TextStyle(fontSize: 17),),
               onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) => ThemeMat()));
+                Navigator.pushNamed(context, '/the');
               },
             ),
 
@@ -47,7 +47,7 @@ class DrawerMat extends StatelessWidget{
               leading: Icon(Icons.info, color: Colors.black, size: 25,),
               title: Text("About", style: TextStyle(fontSize: 17),),
               onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) => About()));
+                Navigator.pushNamed(context, '/abt');
               },
             ),
 
