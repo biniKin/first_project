@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:first_project/Home.dart';
 
 class Reslut_page extends StatelessWidget {
   const Reslut_page({super.key});
@@ -19,6 +20,27 @@ class Reslut_page extends StatelessWidget {
         ),
 
         centerTitle: true,
+      ),
+      body: Column(
+        children: [
+          SizedBox(height: 40,),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              height: 400,
+              width: double.infinity,
+              child: Card(
+                color: Color(0xFF735DA5),
+                child: Column(
+                  children: [
+                    Text("Your reslut", style: TextStyle(fontSize: 60, fontWeight: FontWeight.bold),),
+
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
