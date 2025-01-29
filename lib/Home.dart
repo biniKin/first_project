@@ -1,4 +1,5 @@
 import 'package:first_project/drawer.dart';
+import 'package:first_project/result.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -12,6 +13,11 @@ class _Home extends State<Home> {
   final TextEditingController textEditingController2 = TextEditingController();
   final TextEditingController textEditingController1 = TextEditingController();
   double reslut = 0;
+
+  void Cal(){
+    double bmi = double.parse(textEditingController1.text) / (double.parse(textEditingController2.text)*double.parse(textEditingController2.text));
+    Navigator.push(context, MaterialPageRoute(builder: (context) => Reslut_page(bmi: bmi)));
+  }
 
 
 
@@ -64,7 +70,6 @@ class _Home extends State<Home> {
                             },
                             child: Column(
                               children: [
-                                
                                 Container(
                                   height: 50,
                                   width: 50,
@@ -210,7 +215,7 @@ class _Home extends State<Home> {
                 ),
                 onPressed: () {
                   setState((){
-                    Navigator.pushNamed(context, '/ResPage');
+                    Cal();
                   });
                 },
                 child: Text("Calculate", style: TextStyle(color: Colors.black)),

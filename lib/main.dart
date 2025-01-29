@@ -22,7 +22,6 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.light(),
       home: Material_of_bmi(),
       routes:{
-        '/ResPage':(context) => const Reslut_page(),
         '/abt':(context) => const About(),
         '/the':(context) => const ThemeMat(),
       } ,

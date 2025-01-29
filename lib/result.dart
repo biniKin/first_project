@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:first_project/Home.dart';
 
 class Reslut_page extends StatelessWidget {
-  const Reslut_page({super.key});
+  final double bmi;
+  Reslut_page({required this.bmi});
 
   @override
   Widget build(BuildContext context) {
@@ -30,11 +31,37 @@ class Reslut_page extends StatelessWidget {
               height: 400,
               width: double.infinity,
               child: Card(
-                color: Color(0xFF735DA5),
+                color: Color(0xFF8766CA),
                 child: Column(
                   children: [
-                    Text("Your reslut", style: TextStyle(fontSize: 60, fontWeight: FontWeight.bold),),
-
+                    Text("Your Reslut", style: TextStyle(fontSize: 60, fontWeight: FontWeight.bold),),
+                    Text(bmi.toStringAsFixed(2), style: TextStyle(fontSize: 25),),
+                    SizedBox(height: 10,),
+                    Container(
+                      padding: EdgeInsets.all(10),
+                      width: double.infinity,
+                      height: 230,
+                      child: Card(
+                        elevation: 10,
+                        shadowColor: Color(0xFF4B0FD3),
+                        color: Color(0xFF8F73C8),
+                        child: Column(
+                          children: [
+                            SizedBox(height: 10,),
+                            Text("Interpretation", style: TextStyle(fontSize: 27),),
+                            SizedBox(height: 10,),
+                            Text("Under Weight:   BMI < 18.5"),
+                            SizedBox(height: 10,),
+                            Text("Normal Weight:   BMI 18.5 - 24.9"),
+                            SizedBox(height: 10,),
+                            Text("Over Weight:   BMI 25 - 29.9"),
+                            SizedBox(height: 10,),
+                            Text("Obesity:   BMI 30 - 34.9"),
+                            SizedBox(height: 10,),
+                          ],
+                        ),
+                      ),
+                    )
                   ],
                 ),
               ),
@@ -45,3 +72,4 @@ class Reslut_page extends StatelessWidget {
     );
   }
 }
+

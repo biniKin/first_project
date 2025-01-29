@@ -35,25 +35,27 @@ class _AboutState extends State<About> {
 
       ),
 
-      body: Column(
-
-        children: [
-          SizedBox(height: 50,),
-          SizedBox(
-            height: 200,
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: SizedBox(
-                height: 200,
-                child: Column(
-                  children: [
-                    Text("About This App Welcome to the BMI Calculator App! This app is designed to help you easily calculate your Body Mass Index (BMI) and understand your health better. BMI is a simple metric that uses your height and weight to determine if you fall within a healthy weight range.")
-                  ],
+      body: Container(
+        width: double.infinity,
+        height: 300,
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Card(
+            shadowColor: Color(0xFF4B0FD3),
+            color: Color(0xFF8F73C8),
+            child: Column(
+              children: [
+                SizedBox(height: 10,),
+                Text("Welcome!", style: TextStyle(fontSize: 30),),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text("About This App Welcome to the BMI Calculator App! This app is designed to help you easily calculate your Body Mass Index (BMI) and understand your health better. BMI is a simple metric that uses your height and weight to determine if you fall within a healthy weight range.",
+                  style: TextStyle(fontSize: 18),),
                 ),
-              ),
+              ],
             ),
           ),
-        ],
+        ),
       )
       
     );

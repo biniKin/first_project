@@ -14,6 +14,10 @@ class _Material_of_bmiState extends State<Material_of_bmi> {
   final TextEditingController textEditingController1 = TextEditingController();
   double reslut = 0;
 
+  void Cal(){
+    double bmi = double.parse(textEditingController1.text) / (double.parse(textEditingController2.text)*double.parse(textEditingController2.text));
+    Navigator.push(context, MaterialPageRoute(builder: (context) => Reslut_page(bmi: bmi)));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -210,7 +214,7 @@ class _Material_of_bmiState extends State<Material_of_bmi> {
                 ),
                 onPressed: () {
                   setState(() {
-                    Navigator.pushNamed(context,'/ResPage');
+                    Cal();
 
                   });
                 },
