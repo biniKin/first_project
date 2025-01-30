@@ -173,7 +173,7 @@ class _Home extends State<Home> {
                       SizedBox(height: 20,),
                       Align(
                         alignment: Alignment.centerLeft,
-                        child: Text("Height(CM)",
+                        child: Text("Height(M)",
                           style: TextStyle(
                             fontSize: 15,
                             fontWeight: FontWeight.bold,
