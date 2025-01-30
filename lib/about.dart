@@ -35,27 +35,47 @@ class _AboutState extends State<About> {
 
       ),
 
-      body: Container(
-        width: double.infinity,
-        height: 300,
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Card(
-            shadowColor: Color(0xFF4B0FD3),
-            color: Color(0xFF8F73C8),
-            child: Column(
-              children: [
-                SizedBox(height: 10,),
-                Text("Welcome!", style: TextStyle(fontSize: 30),),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text("About This App Welcome to the BMI Calculator App! This app is designed to help you easily calculate your Body Mass Index (BMI) and understand your health better. BMI is a simple metric that uses your height and weight to determine if you fall within a healthy weight range.",
-                  style: TextStyle(fontSize: 18),),
+      body: Column(
+        children: [
+          SizedBox(height: 50,),
+          Container(
+            width: double.infinity,
+            height: 330,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Card(
+                shadowColor: Color(0xFF4B0FD3),
+                color: Color(0xFF8F73C8),
+                child: Column(
+                  children: [
+                    SizedBox(height: 10,),
+                    Text("Welcome!", style: TextStyle(fontSize: 30),),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text("Welcome to the BMI Calculator App! This app is designed to help you easily calculate your Body Mass Index (BMI) and understand your health better. BMI is a simple metric that uses your height and weight to determine if you fall within a healthy weight range. ",
+                      style: TextStyle(fontSize: 15),),
+                    ),
+                    SizedBox(height: 10,),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text("Made by Binia"),
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text("@copyright"),
+                      ),
+                    )
+                  ],
                 ),
-              ],
+              ),
             ),
           ),
-        ),
+        ],
       )
       
     );

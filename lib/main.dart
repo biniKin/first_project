@@ -24,6 +24,7 @@ class MyApp extends StatelessWidget {
       routes:{
         '/abt':(context) => const About(),
         '/the':(context) => const ThemeMat(),
+        '/hom':(context) => const Home(),
       } ,
     );
   }

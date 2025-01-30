@@ -18,18 +18,28 @@ class _Home extends State<Home> {
     double bmi = double.parse(textEditingController1.text) / (double.parse(textEditingController2.text)*double.parse(textEditingController2.text));
     Navigator.push(context, MaterialPageRoute(builder: (context) => Reslut_page(bmi: bmi)));
   }
-
+  Color cardcolorM = Color(0xFF735DA5);
+  void changeColor(){
+    setState((){
+      cardcolorM = cardcolorM == Color(0xFF735DA5) ? Color(0xFFB796ED) : Color(0xFF735DA5);
+    });
+  }
+  Color cardcolorF = Color(0xFF735DA5);
+  void changeColorF(){
+    setState((){
+      cardcolorF = cardcolorF == Color(0xFF735DA5) ? Color(0xFFB796ED) : Color(0xFF735DA5);
+    });
+  }
 
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFB6A7EF),
+      backgroundColor: Color(0xFFAD9DDF),
       appBar: AppBar(
-
-        elevation: 2,
+        //elevation: 2,
         shadowColor: Color(0xFF714293),
-        backgroundColor: Color(0xFF735DA5),
+        backgroundColor: Color(0xFFAD9DDF),
         title: Text("BMI CALCULATOR",
           style: TextStyle(
             fontSize: 18,
@@ -55,7 +65,13 @@ class _Home extends State<Home> {
                 color: Color(0xFF735DA5),
                 elevation: 20,
                 shadowColor: Color(0xFF735DA5),
-
+                shape: RoundedRectangleBorder(
+                  side: BorderSide(
+                    color: Color(0xFF8E1CE1),
+                    width: 2,
+                  ),
+                  borderRadius: BorderRadius.circular(12)
+                ),
 
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),
@@ -63,11 +79,10 @@ class _Home extends State<Home> {
                     children: [
                       SizedBox(height: 10),
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           GestureDetector(
-                            onTap: (){
-                            },
+                            onTap: changeColor,
                             child: Column(
                               children: [
                                 Container(
@@ -81,16 +96,17 @@ class _Home extends State<Home> {
                                               color: Color(0xFF8E1CE1)
                                           )
                                       ),
-                                      color: Color(0xFFBD98DC),
+                                      color: cardcolorM,
                                       child: Icon(Icons.male_sharp, size: 33, color: Colors.black,)
                                   ),
                                 ),
-                                Text("Male", style: TextStyle(fontWeight: FontWeight.bold),)
+                                Text("M", style: TextStyle(fontWeight: FontWeight.bold),)
                               ],
                             ),
                           ),
                           SizedBox(width: 16,),
                           GestureDetector(
+                            onTap: changeColorF,
                             child: Column(
                               children: [
                                 Container(
@@ -102,14 +118,14 @@ class _Home extends State<Home> {
                                         borderRadius: BorderRadius.circular(10),
                                             side: BorderSide(
                                               width: 1,
-                                              color: Color(0xFF714293)
+                                              color: Color(0xFF8E1CE1)
                                             )
                                       ),
-                                      color: Color(0xFF7A5DBD),
+                                      color: cardcolorF,
                                       child: Icon(Icons.female_outlined, size: 33, color: Colors.black,)
                                   ),
                                 ),
-                                Text("Female", style: TextStyle(fontWeight: FontWeight.bold),)
+                                Text("F", style: TextStyle(fontWeight: FontWeight.bold),)
                               ],
                             ),
                           ),
@@ -128,7 +144,7 @@ class _Home extends State<Home> {
                       ),
 
                       //
-                      SizedBox(height: 7,),
+                      SizedBox(height: 10,),
                       TextField(
                         controller: textEditingController1,
                         decoration: InputDecoration(
@@ -154,7 +170,7 @@ class _Home extends State<Home> {
                       ),
 
                       //
-                      SizedBox(height: 15,),
+                      SizedBox(height: 20,),
                       Align(
                         alignment: Alignment.centerLeft,
                         child: Text("Height(CM)",
@@ -163,7 +179,7 @@ class _Home extends State<Home> {
                             fontWeight: FontWeight.bold,
                           ),),
                       ),
-                      SizedBox(height: 7,),
+                      SizedBox(height: 10,),
                       TextField(
                         controller: textEditingController2,
                         decoration: InputDecoration(
@@ -209,7 +225,7 @@ class _Home extends State<Home> {
                   shape: WidgetStatePropertyAll(
                     RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
-                      side: BorderSide(width: 1, color: Colors.black),
+                      side: BorderSide(width: 1, color: Color(0xFF8E1CE1)),
                     ),
                   ),
                 ),
