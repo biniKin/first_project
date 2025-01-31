@@ -4,5 +4,5 @@ A new Flutter project.
 
 ## Getting Started
 
-Simple BMI calculator using flutter. 
+Simple and functional BMI calculator app using flutter. 
 
