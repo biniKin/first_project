@@ -105,7 +105,7 @@ class Reslut_page extends StatelessWidget {
           SizedBox(height: 10,),
           SizedBox(
               width: 150,
-              height: 50
+              height: 50,
             child: ElevatedButton(
               style: ButtonStyle(
                 shadowColor: WidgetStatePropertyAll(Color(0xFF735DA5)),
