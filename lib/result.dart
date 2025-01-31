@@ -103,24 +103,28 @@ class Reslut_page extends StatelessWidget {
             ),
           ),
           SizedBox(height: 10,),
-          ElevatedButton(
-            style: ButtonStyle(
-              shadowColor: WidgetStatePropertyAll(Color(0xFF735DA5)),
-              elevation: WidgetStatePropertyAll(16),
-              backgroundColor: WidgetStatePropertyAll(
-                Color(0xFF735DA5),
-              ),
-              shape: WidgetStatePropertyAll(
-                RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
-                  side: BorderSide(width: 1, color: Color(0xFF8E1CE1)),
+          SizedBox(
+              width: 150,
+              height: 50
+            child: ElevatedButton(
+              style: ButtonStyle(
+                shadowColor: WidgetStatePropertyAll(Color(0xFF735DA5)),
+                elevation: WidgetStatePropertyAll(16),
+                backgroundColor: WidgetStatePropertyAll(
+                  Color(0xFF735DA5),
+                ),
+                shape: WidgetStatePropertyAll(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    side: BorderSide(width: 1, color: Color(0xFF8E1CE1)),
+                  ),
                 ),
               ),
+              onPressed: (){
+                Navigator.pushNamed(context, '/hom');
+              },
+              child: Text("Calculate Again", style: TextStyle(color: Colors.black)),
             ),
-            onPressed: (){
-              Navigator.pushNamed(context, '/hom');
-            },
-            child: Text("Calculate Again", style: TextStyle(color: Colors.black)),
           )
         ],
       ),
